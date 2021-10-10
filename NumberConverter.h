@@ -7,24 +7,16 @@
 class NumberConverter {
 
 private:
-    int new_base;
-public:
-    int getNewBase() const;
+    int target_base;
+    std::vector<int> convertValue(int) const;
 
-    static constexpr int default_base { 10 };
-private:
-
-    std::string convertValue(int) const;
 
 public:
+    static constexpr int primary_base { 10 };
     explicit NumberConverter(int);
-    void setNewBase(int);
-
-    std::string getConvertedValue(int value) const;
-
-
-
-
+    int getTargetBase() const;
+    void setTargetBase(int);
+    std::string getConvertedValueAsString(int) const;
 
 };
 
